@@ -1,0 +1,11 @@
+.primary{
+    background-color:#FCDEDE;
+    box-shadow:1px 1px 1px #D83F3D inset;
+}
+form{
+   background: aqua;
+   text-align: center;
+   border: 2px solid;
+   box-sizing: unset;
+
+}

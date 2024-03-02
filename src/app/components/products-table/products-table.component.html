@@ -1,0 +1,45 @@
+<app-banner title="PRODUCTS TABLE"></app-banner>
+<div class="container-fluid pt-5">
+    <div class="text-center mb-4">
+        <h2 class="section-title px-5"><span class="px-2">Wellcom To List Products Table</span></h2>
+    </div>
+    <div class="row px-xl-5 pb-3">
+<div class="col-lg-3 col-md-6 col-sm-12 pb-1" *ngFor="let p of pageOfItems">
+    <div class="card product-item border-0 mb-4">
+        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+            <img class="img-fluid w-100" src="assets/img/pp.webp" alt="">
+        </div>
+        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+            <h6 class="text-truncate mb-3"> <label>ID :</label> {{p._id}}</h6>
+            <p class="text-truncate mb-3"> <label>Name :</label>{{p.name}}</p>
+            <p class="text-truncate mb-3"> <label>Type :</label>  {{p.type}}</p>
+            <p class="text-truncate mb-3"> <label>Reference :</label>  {{p.reference}}</p>
+            <p class="text-truncate mb-3"> <label>Stock :</label>   {{p.stock}}</p>
+            <p class="text-truncate mb-3"> <label>Price :</label> {{p.price}}</p>
+            <p class="text-truncate mb-3"> <label>Supplier :</label>  {{p.supplier}}</p>
+            <p class="text-truncate mb-3"> <label>Status :</label> {{p.status}}</p>
+            <!-- <p class="text-truncate mb-3"> <label>State :</label> {{p.disponible}}</p> -->
+            <p class="text-truncate mb-3"> <label>FirstName*lastName :</label> {{p.produits[0]?.firstName}} {{p.produits[0]?.lastName}}</p>
+            <p class="text-truncate mb-3"> <label>Mobile :</label> {{p.produits[0]?.telephone}}</p>
+            <p class="text-truncate mb-3"> <label>Adresse :</label> {{p.produits[0]?.adresse}}</p>
+
+            <!-- <div class="d-flex justify-content-center">
+                <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+            </div> -->
+        </div>
+        <!-- class="card-footer d-flex justify-content-between bg-light border" -->
+        <div >
+            <button type="button" (click)="confirmeProducts(p._id)"  > <img src="/assets/img/confirme.jpg" height ="70" width="70" title="Confirme Products" /></button>
+            <button type="button" (click)="updateProducts(p._id)" ><img src="/assets/img/modifier.png" height ="70" width="70" title="Update Products" /></button>
+            <button type="button" (click)="delteProducts(p._id)"  > <img src="/assets/img/delete.png" height ="70" width="70" title="Delete Products" /></button>
+            <button type="button" (click)="stateProducts(p._id)"  > <img src="/assets/img/etat.png" height ="70" width="70" title="State Products" /></button>
+
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<div class="card-footer pb-0 pt-3">
+    <jw-pagination 
+   [items]="produit" [pageSize]="4" (changePage)="onChangePage($event)"></jw-pagination>
+   </div>

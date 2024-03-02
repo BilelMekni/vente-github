@@ -1,0 +1,40 @@
+<app-banner title="CLIENT TABLE"></app-banner>
+<div class="container-fluid pt-5">
+    <div class="text-center mb-4">
+        <h2 class="section-title px-5"><span class="px-2">Wellcom To List Client Table</span></h2>
+    </div>
+    <div class="row px-xl-5 pb-3">
+<div class="col-lg-3 col-md-6 col-sm-12 pb-1" *ngFor="let c of pageOfItems">
+    <div class="card product-item border-0 mb-4">
+        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+            <img class="img-fluid w-100" src="assets/img/client.png" alt="">
+        </div>
+        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+            <h6 class="text-truncate mb-3">{{c._id}}</h6>
+            <p class="text-truncate mb-3">{{c.firstName}}</p>
+            <p class="text-truncate mb-3">{{c.lastName}}</p>
+            <p class="text-truncate mb-3">{{c.date}}</p>
+            <p class="text-truncate mb-3">{{c.email}}</p>
+            <p class="text-truncate mb-3">{{c.telephone}}</p>
+            <p class="text-truncate mb-3">{{c.adresse}}</p>
+            <p class="text-truncate mb-3">{{c.gender}}</p>
+            <p class="text-truncate mb-3">{{c.role}}</p>
+            <img [src]="c.avatar" alt="" width="50px">
+
+            
+            <!-- <div class="d-flex justify-content-center">
+                <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+            </div> -->
+        </div>
+        <div class="card-footer d-flex justify-content-between bg-light border">
+            <button type="button" (click)="updateClients(c._id)"  > <img src="/assets/img/modifier.png" height ="90" width="90" title="Update Client" /></button>
+            <button type="button" (click)="deleteClient(c._id)" > <img src="/assets/img/delete.png" height ="90" width="90" title="Delete Client" /></button>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<div class="card-footer pb-0 pt-3">
+    <jw-pagination 
+   [items]="user" [pageSize]="4" (changePage)="onChangePage($event)"></jw-pagination>
+   </div>

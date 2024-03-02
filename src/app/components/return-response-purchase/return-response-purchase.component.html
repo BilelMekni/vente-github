@@ -1,0 +1,62 @@
+<app-banner title="RETURN RESPONSE PURCHASE PRODUCTS"></app-banner>
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+    <!-- Contact Start -->
+    <div class="container-fluid pt-5">
+        <div class="text-center mb-4">
+            <h2 class="section-title px-5"><span class="px-2">Wellcome To Response Purchase</span></h2>
+        </div>
+        <div class="row px-xl-5">
+            <div class="col-lg-7 mb-5">
+                <div class="contact-form">
+                    <div id="success"></div>
+                    <form   #returnForm="ngForm" (ngSubmit)="AddReturn()"  name="sentMessage" id="contactForm" novalidate="novalidate">
+                        <div class="control-group">
+                            <input type="text" class="form-control" id="namef" [(ngModel)]="return.firstName"[ngModelOptions]="{standalone: true}"  placeholder="Your First Name"
+                                required="required" data-validation-required-message="Please enter your first name" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="text" class="form-control" id="namel" [(ngModel)]="return.lastName" [ngModelOptions]="{standalone: true}" placeholder="Your Last Name"
+                                required="required" data-validation-required-message="Please enter your last name" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="email" class="form-control" id="email" [(ngModel)]="return.email" [ngModelOptions]="{standalone: true}" placeholder="Your Email"
+                                required="required" data-validation-required-message="Please enter your email" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="text" class="form-control" id="subject" [(ngModel)]="return.subject" [ngModelOptions]="{standalone: true}" placeholder="Subject"
+                                required="required" data-validation-required-message="Please enter a subject" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <textarea class="form-control" rows="6" id="message" [(ngModel)]="return.message" [ngModelOptions]="{standalone: true}" placeholder="Message"
+                                required="required"
+                                data-validation-required-message="Please enter your message"></textarea>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div>
+                            <button class="btn btn-primary py-2 px-4" type="submit" id="sendMessageButton">Send
+                                Message</button>
+                                <button class="btn btn-success py-2 px-4"  (click)="cancel()"   type="reset" id="sendMessageButton">
+                                    Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!-- Contact End -->
+
+
+  
+
+
+</body>
+
+</html>

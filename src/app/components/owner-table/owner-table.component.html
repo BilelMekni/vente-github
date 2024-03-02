@@ -1,0 +1,40 @@
+<app-banner title="OWNER TABLE"></app-banner>
+<div class="container-fluid pt-5">
+    <div class="text-center mb-4">
+        <h2 class="section-title px-5"><span class="px-2">Wellcom To List Owner Table</span></h2>
+    </div>
+    <div class="row px-xl-5 pb-3">
+<div class="col-lg-3 col-md-6 col-sm-12 pb-1" *ngFor="let o of pageOfItems" >
+    <div class="card product-item border-0 mb-4" >
+        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+            <img class="img-fluid w-100" src="assets/img/owner.png" alt="">
+        </div>
+        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+            <h6 class="text-truncate mb-3">{{o._id}}</h6>
+            <p class="text-truncate mb-3">{{o.firstName}}</p>
+            <p class="text-truncate mb-3">{{o.lastName}}</p>
+            <p class="text-truncate mb-3">{{o.date}}</p>
+            <p class="text-truncate mb-3">{{o.email}}</p>
+            <p class="text-truncate mb-3">{{o.telephone}}</p>
+            <p class="text-truncate mb-3">{{o.adresse}}</p>
+            <p class="text-truncate mb-3">{{o.matricule}}</p>
+            <p class="text-truncate mb-3">{{o.gender}}</p>
+            <p class="text-truncate mb-3">{{o.role}}</p>
+            <img [src]="o.avatar" alt="" width="100px">
+
+            <!-- <div class="d-flex justify-content-center">
+                <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+            </div> -->
+        </div>
+        <div class="card-footer d-flex justify-content-between bg-light border">
+            <button type="button" (click)="updateOwners(o._id)" > <img src="/assets/img/modifier.png" height ="90" width="90" title="Update Owner" /></button>
+            <button type="button" (click)="deleteOwners(o._id)" > <img src="/assets/img/delete.png" height ="90" width="90" title="Delete Owner" /></button>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<div class="card-footer pb-0 pt-3">
+    <jw-pagination 
+   [items]="awner" [pageSize]="4" (changePage)="onChangePage($event)"></jw-pagination>
+   </div>

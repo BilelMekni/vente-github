@@ -1,0 +1,21 @@
+.img-fluid{
+    left:790px;
+
+ position:absolute;
+ height: 300px;
+ height: 300px;
+}
+.container-fluid{
+    
+    /* background-color: wheat; */
+    background-size: cover;
+    font-family:helvetica;
+}
+.px-2{
+    background-color: cornflowerblue;
+}
+
+
+.red{
+    color: red;
+}

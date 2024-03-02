@@ -1,0 +1,44 @@
+<app-banner title="RESPONSE CONFIRME"></app-banner>
+<h1>WELLCOME</h1>
+<table class="table table-info">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">FirstName</th>
+        <th scope="col">LastName</th>
+        <th scope="col">Email</th>
+        <th scope="col">Subject</th>
+        <th scope="col">Message</th>
+        <th scope="col">NameOwners</th>
+        <th scope="col">MobileOwners</th>
+        <th scope="col">AddrOwners</th>
+        <th scope="col">Validations</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let res of pageOfItems">
+        <th scope="row">{{res._id}}</th>
+        <td>{{res.firstName}}</td>
+        <td>{{res.lastName}}</td>
+        <td>{{res.email}}</td>
+        <td>{{res.subject}}</td>
+        <td>{{res.message}}</td>
+        <td>{{res.owners[0]?.firstName}}</td>
+        <td>{{res.owners[0]?.telephone}}</td>
+        <td>{{res.owners[0]?.adresse}}</td>
+        <td>
+            <button type="button" (click)="acceptResponse(res._id)"  class="btn btn-success">Accept</button>
+            <button type="button" (click)="deleteResponse(res._id)" class="btn btn-danger">Delete</button> 
+        </td>
+      </tr>
+     
+    </tbody>
+  </table>
+  <div class="card-footer pb-0 pt-3">
+    <jw-pagination 
+   [items]="see" [pageSize]="4" (changePage)="onChangePage($event)"></jw-pagination>
+   </div>
+   <div style="text-align: center;">
+    <button type="button" (click)="CancelResponse()" class="btn btn-info">Cancel</button> 
+
+   </div>

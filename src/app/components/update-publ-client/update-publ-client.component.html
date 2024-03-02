@@ -1,0 +1,55 @@
+<app-banner title="UPDATE PUBLIVATIONS CLIENTS"></app-banner>
+<app-banner title="PUBLICATIONS CLIENTS"></app-banner>
+
+    
+<!-- multistep form -->
+<form  [formGroup]="updateForm"  id="msform">
+    <!-- progressbar -->
+    
+    <!-- fieldsets -->
+    <fieldset>
+      <h2 class="fs-title">Update your publications Clients</h2>
+      <h3 class="fs-subtitle">Wellcome</h3>
+      
+        <input type="text" name="title" id="titre" formControlName="title"    placeholder="Title" />
+        <div *ngIf="updateForm.controls['title'].invalid && (updateForm.controls['title'].touched ||
+            updateForm.controls['title'].dirty)">
+            <div *ngIf="updateForm.controls['title'].errors.required" class="red">
+                Title est obligatoire
+
+            </div>
+            <div *ngIf="updateForm.controls['title'].errors.minlength" class="red">
+                Title est contient min 3 charactere
+
+            </div>
+            <div *ngIf="updateForm.controls['title'].errors.maxlength" class="red">
+                Title est contient max 20 charactere
+
+            </div>
+
+            </div>
+
+        <input type="text" name="desc" id="des" formControlName="description"  placeholder="Description" />
+        <div *ngIf="updateForm.controls['description'].invalid && (updateForm.controls['description'].touched ||
+            updateForm.controls['description'].dirty)">
+            <div *ngIf="updateForm.controls['description'].errors.required" class="red">
+                Description est obligatoire
+
+            </div>
+            <div *ngIf="updateForm.controls['description'].errors.minlength" class="red">
+                Description est contient min 3 charactere
+
+            </div>
+            <div *ngIf="updateForm.controls['description'].errors.maxlength" class="red">
+                Description est contient max 20 charactere
+
+            </div>
+
+            </div>
+
+      <input type="submit" (click)="updatePubl()"  name="next" class="next action-button" value="Update" />
+            <input type="reset" (click)="cancel()" name="next" class="next action-button" value="Cancel" />
+
+    </fieldset>
+   
+  </form>

@@ -1,0 +1,21 @@
+<app-banner title="confirme publications owners"></app-banner>
+<div class="container-fluid pt-5">
+    <h3 >Wellcom To Publications Owners Confirmed</h3>
+
+    <div class="row px-xl-5 pb-3">
+        <div class="col-lg-3col-md-6 col-sm-6 pb-1"*ngFor="let pub of publ" >
+            <div  >
+                <h1 class="fa fa-check text-primary m-0 mr-3"></h1>
+                  <img class="img-fluid" src="assets/img/pupp.png" alt="">
+                <h5  class="font-weight-semi-bold m-0"> <label for="">ID :</label>  {{pub._id}}</h5><br>
+                <p class="font-weight-semi-bold m-0"> <label for="">Subject :</label> {{pub.subject}}</p><br>
+                <p class="font-weight-semi-bold m-0"><label for="">Description :</label> {{pub.description}}</p><br>
+                <p class="font-weight-semi-bold m-0"><label for="">Status :</label> {{pub.status}}</p><br>
+                <p class="font-weight-semi-bold m-0"> <label for="">FirstName && LastName :</label> {{pub.owners[0]?.firstName}} && {{pub.owners[0]?.lastName}}</p><br>
+                <p class="font-weight-semi-bold m-0"><label for="">Mobile :</label>{{pub.owners[0]?.telephone}}</p><br>
+                <p class="font-weight-semi-bold m-0"><label for="">Email :</label>{{pub.owners[0]?.email}}</p>
+            </div>
+        </div>
+       
+    </div>
+</div>

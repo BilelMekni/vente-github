@@ -1,0 +1,165 @@
+<app-banner title="UPDATE PURCHASE"></app-banner>
+<body>
+
+    <div id="wrapper">
+        <h2 id="titleRegistration">WELLCOM TO UPDATE PURCHASE</h2>
+        <form [formGroup]="updateForm" >
+            <fieldset id="userInformation">
+                <legend>User Update Information</legend>
+
+                <div class="divInformation">
+                    <label class="label" for="username">FirstName:</label>
+                    <input type="text" id="username"  class="input" formControlName="firstName"   placeholder="FirstName" autocomplete="off" autofocus="autofocus"
+                    />
+                   
+                </div>
+                <div *ngIf="updateForm.controls['firstName'].invalid && (updateForm.controls['firstName'].touched ||
+            updateForm.controls['firstName'].dirty)">
+            <div *ngIf="updateForm.controls['firstName'].errors.required" class="red">
+                FirstName is required
+
+            </div>
+            <div *ngIf="updateForm.controls['firstName'].errors.minlength" class="red">
+                FirstName must have at last 3 chars
+
+            </div>
+            <div *ngIf="updateForm.controls['firstName'].errors.maxlength" class="red">
+                FirstName must have at most 20 chars
+
+            </div>
+
+            </div>
+
+                <div class="divInformation">
+                    <label class="label" for="firstName">Last Name:</label>
+                    <input type="text" id="firstName"   class="input"  formControlName="lastName"  placeholder="LastName" autocomplete="off" />
+                  
+                </div>
+                <div *ngIf="updateForm.controls['lastName'].invalid && (updateForm.controls['lastName'].touched ||
+                updateForm.controls['lastName'].dirty)">
+                <div *ngIf="updateForm.controls['lastName'].errors.required" class="red">
+                    LastName is required
+    
+                </div>
+                <div *ngIf="updateForm.controls['lastName'].errors.minlength" class="red">
+                    LastName must have at last 3 chars
+    
+                </div>
+                <div *ngIf="updateForm.controls['lastName'].errors.maxlength" class="red">
+                    LastName must have at most 20 chars
+    
+                </div>
+    
+                </div>
+    
+
+                <div class="divInformation">
+                    <label class="label" for="lastName">Mobile Phone:</label>
+                    <input type="number" id="lastName"  class="input"  formControlName="phone" placeholder="Mobile Phone" autocomplete="off" />
+                    
+                </div>
+                <div *ngIf="updateForm.controls['phone'].invalid && (updateForm.controls['phone'].touched ||
+                updateForm.controls['phone'].dirty)">
+                <div *ngIf="updateForm.controls['phone'].errors.required" class="red">
+                    Phone is required
+    
+                </div>
+                <div *ngIf="updateForm.controls['phone'].errors.minlength" class="red">
+                    Phone must have at last 8 number
+    
+                </div>
+                <div *ngIf="updateForm.controls['phone'].errors.maxlength" class="red">
+                    Phone must have at most 8 number
+    
+                </div>
+    
+                </div>
+
+                
+                <div class="divInformation">
+                    <label class="label" for="email">Type Products:</label>
+                    <select class="custom-select" id="inputGroupSelect01"  formControlName="type">
+                        <option selected>Choose...</option>
+                        <option value="Technologie">Technologie</option>
+                        <option value="Sport">Sport</option>
+                        <option value="Dress">Dress</option>
+                      </select>                    
+                </div>
+                <div *ngIf="updateForm.controls['type'].invalid && (updateForm.controls['type'].touched ||
+                updateForm.controls['type'].dirty)">
+                <div *ngIf="updateForm.controls['type'].errors.required" class="red">
+                    Type is required
+    
+                </div>
+                </div>
+                <div class="divInformation">
+                    <label class="label" for="email">Products:</label>
+                    <select class="custom-select" id="inputGroupSelect01"   formControlName="products" >
+                        <option selected>Choose...</option>
+                        <option value="Samsung A10">Samsung A10</option>
+                        <option value="Samsung A20">Samsung A20</option>
+                        <option value="Samsung A30">Samsung A30</option>
+                        <option value="Samsung A50">Samsung A50</option>
+                        <option value="Redmi Note10">Redmi Note10</option>
+                        <option value="Redmi Note11">Redmi Note11</option>
+                        <option value="Redmi Note10">Redmi Note10</option>
+                        <option value="Tuns ROM">Tuns ROM</option>  
+                        <option value="Tuns RMD">Tuns RMD</option>
+                        <option value="Tuns FCB">Tuns FCB</option>
+                        <option value="Tuns ACM">Tuns ACM</option>
+                        <option value="Sac Noir">Sac Noir</option>
+                        <option value="Custume">Custume</option>
+                        <option value="Robe">Robe</option>
+                        <option value="Pantallon">Pantallon</option>
+                        <option value="Pull">Pull</option>
+
+                      </select>                    
+                </div>
+                <div *ngIf="updateForm.controls['products'].invalid && (updateForm.controls['products'].touched ||
+                updateForm.controls['products'].dirty)">
+                <div *ngIf="updateForm.controls['products'].errors.required" class="red">
+                    Products is required
+    
+                </div>
+                </div>
+                <div class="divInformation">
+                    <label class="label" for="price">Price:</label>
+                    <input type="number" id="price"  class="input" formControlName="price" placeholder="Price" autocomplete="off" />
+                    
+                </div>
+                <div *ngIf="updateForm.controls['price'].invalid && (updateForm.controls['price'].touched ||
+                updateForm.controls['price'].dirty)">
+                <div *ngIf="updateForm.controls['price'].errors.required" class="red">
+                    Price is required
+    
+                </div>
+                </div>
+                <div class="divInformation">
+                    <label class="label" for="quantity">Quantity:</label>
+                    <input type="number" id="quantity"  class="input" formControlName="quantity" placeholder="Quantity" autocomplete="off" />
+                    
+                </div>
+                <div *ngIf="updateForm.controls['quantity'].invalid && (updateForm.controls['quantity'].touched ||
+                updateForm.controls['quantity'].dirty)">
+                <div *ngIf="updateForm.controls['quantity'].errors.required" class="red">
+                    Quantity is required
+    
+                </div>
+                </div>
+                
+                
+              
+            </fieldset>
+
+            <fieldset id="nextStep">
+                <button  (click)="updatePurchase()" id="nextStepBtn">Update Purchase</button>
+            </fieldset>
+            <fieldset id="nextStep">
+                <button (click)="cancel()" id="nextStepBtn">Cancel</button>
+            </fieldset>
+
+            
+        </form>
+    </div>
+
+</body>

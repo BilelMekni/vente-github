@@ -1,0 +1,15 @@
+h1{
+    color: blue;
+    text-align: center;
+    text-decoration: underline;
+    text-overflow: inherit;
+    text-shadow: skyblue;
+    font-size: xx-large;
+    
+}
+/*/// IMAGE/***/
+.img-fluid{
+    width: 70px;
+    height: 70px;
+}
+

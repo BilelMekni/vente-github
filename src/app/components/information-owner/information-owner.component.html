@@ -1,0 +1,100 @@
+<app-banner title="ESPACE OWNER"></app-banner>
+<div class="container-fluid pt-5">
+    <div class="row px-xl-5 pb-3">
+    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+        <div class="card product-item border-0 mb-4">
+            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                <img class="img-fluid w-100" src="assets/img/add.png" alt="">
+            </div>
+            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                <h6 class="text-truncate mb-3">Add Product</h6>
+                <div>
+                <button class="btn" (click)="addProducts()" >
+                    <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1" class="sparkle">
+                        <path d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z"></path>
+                    </svg>
+                
+                    <span class="text">ADD PRODUCTS</span>
+                </button>
+            </div>
+            </div>
+            <!-- <div class="card-footer d-flex justify-content-between bg-light border">
+                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+            </div> -->
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+        <div class="card product-item border-0 mb-4">
+            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                <img class="img-fluid w-100" src="assets/img/publication.png" alt="">
+            </div>
+            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                <h6 class="text-truncate mb-3">General Publications</h6>
+                <div>
+                    <button class="btn" (click)="publications()" >
+                        <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1" class="sparkle">
+                            <path d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z"></path>
+                        </svg>
+                    
+                        <span class="text">ADD PUBLICATIONS</span>
+                    </button>
+                </div>
+               
+            </div>
+            <!-- <div class="card-footer d-flex justify-content-between bg-light border">
+                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+            </div> -->
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+        <div class="card product-item border-0 mb-4">
+            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                <img class="img-fluid w-100" src="assets/img/rrr.png" alt="">
+            </div>
+            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                <h6 class="text-truncate mb-3">Return Response</h6>
+                <div>
+                    <button class="btn" (click)="returnResponse()" >
+                        <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1" class="sparkle">
+                            <path d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z"></path>
+                        </svg>
+                    
+                        <span class="text">Return Response</span>
+                    </button>
+                </div>
+               
+            </div>
+            <!-- <div class="card-footer d-flex justify-content-between bg-light border">
+                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+            </div> -->
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+        <div class="card product-item border-0 mb-4">
+            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                <img class="img-fluid w-100" src="assets/img/set.jpg" alt="">
+            </div>
+            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                <h6 class="text-truncate mb-3">Setting</h6>
+                <div>
+                    <button class="btn" (click)="setting()" >
+                        <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1" class="sparkle">
+                            <path d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z"></path>
+                        </svg>
+                    
+                        <span class="text">Setting</span>
+                    </button>
+                </div>
+               
+            </div>
+            <!-- <div class="card-footer d-flex justify-content-between bg-light border">
+                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+            </div> -->
+        </div>
+    </div>
+</div>
+</div>

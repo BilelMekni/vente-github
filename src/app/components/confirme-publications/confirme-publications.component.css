@@ -1,0 +1,17 @@
+label{
+    text-align: center;
+    text-decoration: underline;
+    color: chocolate;
+}
+.img-fluid{
+    height: 150px;
+    width: 150px;
+} 
+h3{
+    color: brown;
+    background-color: wheat;
+    text-align: center;
+    text-decoration: underline;
+    
+    
+}

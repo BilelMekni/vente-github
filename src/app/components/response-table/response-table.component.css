@@ -1,0 +1,9 @@
+h1{
+    color: blue;
+    background-color: mediumseagreen;
+    text-align: center;
+}
+.img-fluid{
+    height: 50px;
+    width: 50px;
+}

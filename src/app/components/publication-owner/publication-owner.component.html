@@ -1,0 +1,19 @@
+ <app-banner title="Publications Owner"></app-banner> 
+<!-- multistep form -->
+   <form  #publicationsForm="ngForm" (ngSubmit)="validate()"    id="msform"> 
+    <!-- progressbar -->
+     
+    <!-- fieldsets -->
+     <fieldset>
+      <h2 class="fs-title">Create your publications</h2>
+      <h3 class="fs-subtitle">Wellcome</h3>
+      <input name="ti" type="text"  [(ngModel)]="publications.subject" [ngModelOptions]="{standalone: true}"   placeholder=" Subjects" />
+      <input name="soub" type="text"  [(ngModel)]="publications.description" [ngModelOptions]="{standalone: true}"  placeholder="Description" />
+      
+      <input type="submit" name="next" class="next action-button" value="Publish" />
+      <input type="reset" name="next" class="next action-button" (click)="cancel()" value="Cancel" />
+
+    </fieldset>
+   
+  </form> 
+  

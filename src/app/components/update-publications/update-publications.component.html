@@ -1,0 +1,51 @@
+<app-banner title="UPDATE PUBLICATIONS"></app-banner>
+<!-- multistep form -->
+<form  [formGroup]="updateForm"     id="msform"> 
+    <!-- progressbar -->
+     
+    <!-- fieldsets -->
+     <fieldset>
+      <h2 class="fs-title">Update your publications</h2>
+      <h3 class="fs-subtitle">Wellcome</h3>
+      <input name="ti" type="text"  formControlName="subject"   placeholder=" Subjects" />
+      <div *ngIf="updateForm.controls['subject'].invalid && (updateForm.controls['subject'].touched ||
+            updateForm.controls['subject'].dirty)">
+            <div *ngIf="updateForm.controls['subject'].errors.required" class="orange">
+                Subject is required
+
+            </div>
+            <div *ngIf="updateForm.controls['subject'].errors.minlength" class="orange">
+                Subject must have at last 3 chars
+
+            </div>
+            <div *ngIf="updateForm.controls['subject'].errors.maxlength" class="orange">
+                name must have at most 50 chars
+
+            </div>
+
+            </div>
+           
+      <input name="soub" type="text"  formControlName="description"  placeholder="Description" />
+      <div *ngIf="updateForm.controls['description'].invalid && (updateForm.controls['description'].touched ||
+            updateForm.controls['description'].dirty)">
+            <div *ngIf="updateForm.controls['description'].errors.required" class="orange">
+                Description is required
+
+            </div>
+            <div *ngIf="updateForm.controls['description'].errors.minlength" class="orange">
+                Description must have at last 3 chars
+
+            </div>
+            <div *ngIf="updateForm.controls['description'].errors.maxlength" class="orange">
+                Description must have at most 500 chars
+
+            </div>
+
+            </div>
+      <input type="submit" name="next" class="next action-button" (click)="update()" value="update" />
+      <input type="reset" name="next" class="next action-button" (click)="cancel()" value="Cancel" />
+
+    </fieldset>
+   
+  </form> 
+  

@@ -1,0 +1,43 @@
+<app-banner title="WEATHER"></app-banner>
+
+<body>
+
+  <div class="container">
+
+    <div class="cover">
+      <h1>Daily Weather Conditions.</h1>
+      <form [formGroup]="searchWeather" class="flex-form">
+
+        <input type="search" formControlName="city" placeholder="Placer City">
+
+        <div *ngIf="searchWeather.controls['city'].invalid && (searchWeather.controls['city'].touched ||
+            searchWeather.controls['city'].dirty)">
+          <div *ngIf="searchWeather.controls['city'].errors.required" class="red">
+            City is required
+
+          </div>
+
+        </div>
+        <input type="submit" (click)="searchWeathers()" value="Search">
+      </form>
+    </div>
+    <div *ngIf="weatherresult " class="red">
+      <div class="image">
+       <img src="assets/img/1.png" alt="" width="20px" height="20px">
+       <p>HUMIDITY : {{weatherresult.humidity}}</p>
+       <img src="assets/img/5.png" alt="" width="20px" height="20px">
+        <p>TEMP : {{weatherresult.temp}}</p>
+        <img src="assets/img/4.png" alt="" width="20px" height="20px">
+        <p> PRESSURE : {{weatherresult.pressure}}</p>
+
+      </div>
+
+
+
+
+
+
+    </div>
+
+  </div>
+</body>

@@ -1,0 +1,210 @@
+<app-banner title="SIGNUP ADMIN"></app-banner>
+<div class="container-fluid">
+    <div class="text-center mb-4">
+        <h2 class="section-title px-5"><span class="px-2">Singup Admin</span></h2>
+    </div>
+    <div class="row px-xl-5">
+        <div class="col-lg-7 mb-5">
+            <div class="contact-form">
+                <div id="success"></div>
+                <form [formGroup]="signupForm" >
+                    <div class="control-group">
+                        <input type="text" class="form-control" id="name"  formControlName="firstName"  placeholder="Your FirstName"
+                            required="required" data-validation-required-message="Please enter your first name" />
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div *ngIf="signupForm.controls['firstName'].invalid && (signupForm.controls['firstName'].touched ||
+                    signupForm.controls['firstName'].dirty)">
+                    <div *ngIf="signupForm.controls['firstName'].errors.required" class="red">
+                        FirstName is required
+
+                    </div>
+                    <div *ngIf="signupForm.controls['firstName'].errors.minlength" class="red">
+                        FirstName must have at last 3 chars
+
+                    </div>
+                    <div *ngIf="signupForm.controls['firstName'].errors.maxlength" class="red">
+                        FirstName must have at most 20 chars
+
+                    </div>
+
+                    </div>
+                    <div class="control-group">
+                        <input type="text" class="form-control" id="lastName" formControlName="lastName" placeholder="Your LastName"
+                            required="required" data-validation-required-message="Please enter your last name" />
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div *ngIf="signupForm.controls['lastName'].invalid && (signupForm.controls['lastName'].touched || 
+                    signupForm.controls['lastName'].dirty)">
+                    <div *ngIf="signupForm.controls['lastName'].errors.required" class="red">
+                      LastName is required
+                    </div>
+                    <div *ngIf="signupForm.controls['lastName'].errors.minlength" class="red">
+                        LastName must have at last 3 chars
+
+                    </div>
+                    <div *ngIf="signupForm.controls['lastName'].errors.maxlength" class="red">
+                        LastName must have at most 20 chars
+
+                    </div>
+
+                    </div>
+                    <div class="control-group">
+                        Date of birth: <input type="date" class="form-control" id="date" formControlName="date"
+                            required="required" data-validation-required-message="Please enter your last name" />
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div *ngIf="signupForm.controls['date'].invalid && (signupForm.controls['date'].touched ||
+                    signupForm.controls['date'].dirty)">
+                    <div *ngIf="signupForm.controls['date'].errors.required" class="red">
+                      Date is required
+                    </div>
+
+                    </div>
+                    <div class="control-group">
+                        <input type="email" class="form-control" id="email" formControlName="email" placeholder="Your Email"
+                             data-validation-required-message="Please enter your email" />
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div *ngIf="signupForm.controls['email'].invalid && (signupForm.controls['email'].touched ||
+                    signupForm.controls['email'].dirty)">
+                    
+                    <div *ngIf="signupForm.controls['email'].errors.required" class="red">
+                        Email is required
+
+                    </div>
+                    <div *ngIf="signupForm.controls['email'].errors.email" class="red">
+                        Email is invalid
+
+                    </div>
+                    </div>
+                    <div class="control-group">
+                        <input type="tel" class="form-control" id="tel" formControlName="telephone"  placeholder="Your Mobile"
+                            required="required" data-validation-required-message="Please enter your mobile" />
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div *ngIf="signupForm.controls['telephone'].invalid && (signupForm.controls['telephone'].touched || 
+                    signupForm.controls['telephone'].dirty)">
+                    <div *ngIf="signupForm.controls['telephone'].errors.required" class="red">
+                        Mobile is required
+
+                    </div>
+                    <div *ngIf="signupForm.controls['telephone'].errors.minlength" class="red">
+                        Mobile must have at last 8 number
+
+                    </div>
+                    <div *ngIf="signupForm.controls['telephone'].errors.maxlength" class="red" >
+                        Mobile must have at most 8 number
+
+                    </div>
+
+                    </div>
+                    <div class="control-group">
+                        <input type="text" class="form-control" id="adresse" formControlName="adresse" placeholder="Your Adresse"
+                            required="required" data-validation-required-message="Please enter your adresse" />
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div *ngIf="signupForm.controls['adresse'].invalid && (signupForm.controls['adresse'].touched || 
+                    signupForm.controls['adresse'].dirty)">
+                    <div *ngIf="signupForm.controls['adresse'].errors.required" class="red">
+                        Adresse is required
+
+                    </div>
+                    <div *ngIf="signupForm.controls['adresse'].errors.minlength" class="red">
+                        Adresse must have at last 3 chars
+
+                    </div>
+                    <div *ngIf="signupForm.controls['adresse'].errors.maxlength" class="red">
+                        Adresse must have at most 50 chars
+
+                    </div>
+
+                    </div>
+                    <div class="control-group">
+                        <input type="password" class="form-control" formControlName="password" id="pwd" placeholder="Your Password"
+                            required="required" data-validation-required-message="Please enter your password" />
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div *ngIf="signupForm.controls['password'].invalid && (signupForm.controls['password'].touched ||
+                    signupForm.controls['password'].dirty)">
+                    <div *ngIf="signupForm.controls['password'].errors.required" class="red">
+                        Password is required
+
+                    </div>
+                    <div *ngIf="signupForm.controls['password'].errors.pattern" class="red">
+                        password not valid (Minimum eight characters,
+                        At least one uppercase letter,
+                        At least one lowercase letter,
+                        At least one number,
+                        At least one special character).
+                   </div>
+                    
+                    </div>
+                    <div class="control-group">
+                        <input type="password" class="form-control" id="cPwd" formControlName="confPassword" placeholder="Your Confirme Password"
+                            required="required" data-validation-required-message="Please enter your confirme password" />
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div *ngIf="signupForm.controls['confPassword'].invalid && (signupForm.controls['confPassword'].touched ||
+                    signupForm.controls['confPassword'].dirty)">
+                    <div *ngIf="signupForm.controls['confPassword'].errors.confirmError" class="red">
+                        Confirm Pwd does not match PWD.
+
+                    </div>
+
+
+                    </div>
+                    <p>Gender :</p>
+                    
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="gender" value="0" formControlName="gender" id="flexCheckChecked">
+                        <label class="form-check-label" for="flexCheckChecked">
+                          Man
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="gender" value="1" formControlName="gender"  id="flexCheckChecked" >
+                        <label class="form-check-label" for="flexCheckChecked">
+                          Women
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="gender" value="2" formControlName="gender"  id="flexCheckChecked">
+                        <label class="form-check-label" for="flexCheckChecked">
+                          Other
+                        </label>
+                      </div>
+                      <div class="form-group" style="visibility: hidden;">
+                        <input type="file" class="form-control" #filePicker (change)="onImageSelected($event)">
+                      </div>
+                      <div class="text-center">
+                        <button class="btn btn-info" (click)="filePicker.click()">Please select your avatar</button>
+                       <br>
+                       <img [src]="imagePreview" *ngIf="imagePreview"
+                       class="pt-3 pb-3" width="200px" height="200px" alt="">
+                     </div><br>
+
+
+                   
+                    <div class="form-group">
+                        <button class="btn btn-primary py-2 px-4"  (click)="signup()"  [disabled]="signupForm.invalid"  type="submit" id="sendMessageButton">Signup Admin</button>
+                        <button class="btn btn-success py-2 px-4" (click)="cancel()" type="submit" id="cancelButton">Cancel</button>
+                     
+                    </div>
+                    
+                        Or Log In
+                        <div>
+                            <button class="btn btn-warning py-2 px-4"  (click)="login()"  type="submit" id="logButton">Log In</button>
+
+                        </div>
+                   
+                </form>
+            </div>
+        </div>
+        <div >
+            
+            <img class="img-fluid" src="assets/img/admin.webp" alt="">
+            
+        </div>
+    </div>
+</div>

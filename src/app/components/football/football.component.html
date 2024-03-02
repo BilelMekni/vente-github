@@ -1,0 +1,26 @@
+<app-banner title="FOTBALL API"></app-banner>
+<body>
+
+    <div class="container">
+  
+      <div class="cover">
+        <h1>Daily Football Conditions.</h1>
+        <form [formGroup]="searchFoot" class="flex-form">
+  
+          <input type="search" formControlName="club" placeholder="Placer Club">
+  
+          <div *ngIf="searchFoot.controls['club'].invalid && (searchFoot.controls['club'].touched ||
+              searchFoot.controls['club'].dirty)">
+            <div *ngIf="searchFoot.controls['club'].errors.required" class="text-danger">
+              club is required
+  
+            </div>
+  
+          </div>
+          <input type="submit" (click)="searchFoots()" value="Search">
+        </form>
+      </div>
+     
+  
+    </div>
+  </body>

@@ -1,0 +1,43 @@
+<app-banner title="PUBLICATIONS TABLE"></app-banner>
+<h1>Hellow Publications Table By Owners</h1>
+
+<table class="table table-warning">
+    <thead>
+      <tr>
+        <th scope="col">Image</th>
+        <th scope="col">ID</th>
+        <th scope="col">Subject</th>
+        <th scope="col">Description</th>
+        <th scope="col">Status</th>
+        <th scope="col">NameOwners</th>
+        <th scope="col">TelephoneOwners</th>
+        <th scope="col">EmailOwners</th>
+        <th scope="col">Actions</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pub of pageOfItems" >
+        <th><img class="img-fluid" src="assets/img/publ.webp" alt="" /> </th>
+        <th>{{pub._id}}</th>
+        <td>{{pub.subject}}</td>
+        <td>{{pub.description}}</td>
+        <td>{{pub.status}}</td>
+        <td>{{pub.publications[0]?.firstName}} {{pub.publications[0]?.lastName}}</td>
+        <td>{{pub.publications[0]?.telephone}}</td>
+        <td>{{pub.publications[0]?.email}}</td>
+        <td class="card-footer d-flex justify-content-between bg-light border">
+            <button type="button" (click)="confirmePublications(pub._id)"  > <img src="/assets/img/confirme.jpg" height ="50" width="50" title="Confirme Publications" /></button>
+            <button type="button" (click)="updatePublication(pub._id)"> <img src="/assets/img/modifier.png" height ="50" width="50" title="Update Publications" /></button>
+            <button type="button" (click)="deletePublications(pub._id)"  > <img src="/assets/img/delete.png" height ="50" width="50" title="Delete Publications" /></button>
+        </td>
+
+      </tr>
+     
+      
+    </tbody>
+  </table>
+  <div class="card-footer pb-0 pt-3">
+    <jw-pagination 
+   [items]="publications" [pageSize]="4" (changePage)="onChangePage($event)"></jw-pagination>
+   </div>

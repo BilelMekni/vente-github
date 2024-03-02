@@ -1,0 +1,42 @@
+<app-banner title="PUBLICATIONS CLIENTS"></app-banner>
+
+    
+<!-- multistep form -->
+<form  #publicationsForm="ngForm" (ngSubmit)="validate()"  id="msform">
+    <!-- progressbar -->
+    
+    <!-- fieldsets -->
+    <fieldset>
+      <h2 class="fs-title">Create your publications Clients</h2>
+      <h3 class="fs-subtitle">Wellcome</h3>
+      
+        <input type="text" name="title" id="titre" [(ngModel)]="publications.title" [ngModelOptions]="{standalone: true}"     placeholder="Title" />
+
+        <input type="text" name="desc" id="des" [(ngModel)]="publications.description" [ngModelOptions]="{standalone: true}"  placeholder="Description" />
+
+        <input type="date" name="date" id="date" [(ngModel)]="publications.date" [ngModelOptions]="{standalone: true}"  placeholder="Date" />
+
+      
+      <div style="margin-top:10px;" class="wrap">
+                <p>Gender :</p>
+                        <div class="custom-control custom-radio"  >
+                            <input type="radio" id="customRadio1"   [(ngModel)]="publications.gender" [ngModelOptions]="{standalone: true}"      name="gender" value="Man"  class="custom-control-input">
+                            <label class="custom-control-label"  for="customRadio1">Man</label>
+                          </div>
+                          <div class="custom-control custom-radio" style="margin-left: 20px;" >
+                            <input type="radio" id="customRadio2"  [(ngModel)]="publications.gender" [ngModelOptions]="{standalone: true}"     name="gender" value="Woman"  class="custom-control-input">
+                            <label class="custom-control-label"  for="customRadio2">Woman</label>
+                          </div>
+                          <div class="custom-control custom-radio">
+                            <input type="radio" id="customRadio2" [(ngModel)]="publications.gender" [ngModelOptions]="{standalone: true}"     name="gender" value="Other"  class="custom-control-input">
+                            <label class="custom-control-label"  for="customRadio2">Other</label>
+                          </div>
+    
+                </div>
+      
+      <input type="submit" name="next" class="next action-button" value="Publish" />
+            <input type="reset" (click)="cancel()" name="next" class="next action-button" value="Cancel" />
+
+    </fieldset>
+   
+  </form>

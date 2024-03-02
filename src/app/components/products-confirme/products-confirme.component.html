@@ -1,0 +1,33 @@
+<app-banner title="PRODUCTS CONFIRME"></app-banner>
+<div class="container-fluid offer pt-5">
+    <div class="text-center mb-4">
+        <h2 class="section-title px-5"><span class="px-2">Hellow Shop Products</span></h2>
+    </div>
+    <div class="row px-xl-5">
+    <div class="col-md-6 pb-4" *ngFor="let conf of pageOfItems">
+        <div class="position-relative bg-secondary text-center text-md-left text-white mb-2 py-5 px-5">
+            <img src="assets/img/offer-2.png" alt="">
+            <div class="position-relative" style="z-index: 1;">
+                <h5 class="text-uppercase text-primary mb-3"><h4 class="title" >Name</h4>{{conf.name}}</h5>
+                <h5 class="text-uppercase text-primary mb-3"><h4 class="title" >Type</h4>{{conf.type}}</h5>
+                <h5 class="text-uppercase text-primary mb-3"><h4 class="title" >Reference</h4>{{conf.reference}}</h5>
+                <h5 class="text-uppercase text-primary mb-3"><h4 class="title" >Stock</h4>{{conf.stock}}</h5>
+                <h5 class="text-uppercase text-primary mb-3"><h4 class="title" >Price</h4>{{conf.price}}</h5>
+                <h5 class="text-uppercase text-primary mb-3"><h4 class="title" >Supplier</h4>{{conf.supplier}}</h5>
+                <h5 class="text-uppercase text-primary mb-3"><h4 class="title" >State</h4>{{conf.disponible}}</h5>
+                <h4 class="mb-4 font-weight-semi-bold">Name Owners: {{conf.owners[0]?.firstName}} {{conf.owners[0]?.lastName}}</h4>
+                <h4 class="mb-4 font-weight-semi-bold">Telephone: {{conf.owners[0]?.telephone}}</h4>
+
+                <a  (click)="purchaseProducts()" class="btn btn-outline-primary py-md-2 px-md-3">Shop Now</a>
+
+            </div>
+        </div>
+    </div> 
+</div>
+
+</div>
+<div class="card-footer pb-0 pt-3">
+    <jw-pagination 
+   [items]="products" [pageSize]="4" (changePage)="onChangePage($event)"></jw-pagination>
+   </div>
+ 

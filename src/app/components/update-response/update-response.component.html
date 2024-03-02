@@ -1,0 +1,122 @@
+<app-banner title="UPDATE RESPONSE"></app-banner>
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+    <!-- Contact Start -->
+    <div class="container-fluid pt-5">
+        <div class="text-center mb-4">
+            <h2 class="section-title px-5"><span class="px-2">Wellcome To Update Response</span></h2>
+        </div>
+        <div class="row px-xl-5">
+            <div class="col-lg-7 mb-5">
+                <div class="contact-form">
+                    <div id="success"></div>
+                    <form  [formGroup]="updateForm"    name="sentMessage" id="contactForm" novalidate="novalidate">
+                        <div class="control-group">
+                            <input type="text" class="form-control" id="namef" formControlName="firstName"   placeholder="Your First Name"
+                                required="required" data-validation-required-message="Please enter your first name" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div *ngIf="updateForm.controls['firstName'].invalid && (updateForm.controls['firstName'].touched ||
+            updateForm.controls['firstName'].dirty)">
+            <div *ngIf="updateForm.controls['firstName'].errors.required" class="red">
+                FirstName is required
+
+            </div>
+            <div *ngIf="updateForm.controls['firstName'].errors.minlength" class="red">
+                firstName must have at last 8 chars
+
+            </div>
+            <div *ngIf="updateForm.controls['firstName'].errors.maxlength" class="red">
+                firstName must have at most 20 chars
+
+            </div>
+
+            </div>
+                        <div class="control-group">
+                            <input type="text" class="form-control" id="namel" formControlName="lastName" placeholder="Your Last Name"
+                                required="required" data-validation-required-message="Please enter your last name" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div *ngIf="updateForm.controls['lastName'].invalid && (updateForm.controls['lastName'].touched ||
+                        updateForm.controls['lastName'].dirty)">
+                        <div *ngIf="updateForm.controls['lastName'].errors.required" class="red">
+                            LastName is required
+            
+                        </div>
+                        <div *ngIf="updateForm.controls['lastName'].errors.minlength" class="red">
+                            LastName must have at last 8 chars
+            
+                        </div>
+                        <div *ngIf="updateForm.controls['lastName'].errors.maxlength" class="red">
+                            LastName must have at most 20 chars
+            
+                        </div>
+            
+                        </div>
+                        
+                        <div class="control-group">
+                            <input type="text" class="form-control" id="subject" formControlName="subject"  placeholder="Subject"
+                                required="required" data-validation-required-message="Please enter a subject" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div *ngIf="updateForm.controls['subject'].invalid && (updateForm.controls['subject'].touched ||
+                        updateForm.controls['subject'].dirty)">
+                        <div *ngIf="updateForm.controls['subject'].errors.required" class="red">
+                            Subject is required
+            
+                        </div>
+                        <div *ngIf="updateForm.controls['subject'].errors.minlength" class="red">
+                            Subject must have at last 8 chars
+            
+                        </div>
+                        <div *ngIf="updateForm.controls['subject'].errors.maxlength" class="red">
+                            Subject must have at most 20 chars
+            
+                        </div>
+            
+                        </div>
+                        
+                        <div class="control-group">
+                            <textarea class="form-control" rows="6" id="message" formControlName="message" placeholder="Message"
+                                required="required"
+                                data-validation-required-message="Please enter your message"></textarea>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div *ngIf="updateForm.controls['message'].invalid && (updateForm.controls['message'].touched ||
+                        updateForm.controls['message'].dirty)">
+                        <div *ngIf="updateForm.controls['message'].errors.required" class="red">
+                            Message is required
+            
+                        </div>
+                        <div *ngIf="updateForm.controls['message'].errors.minlength" class="red">
+                            Message must have at last 8 chars
+            
+                        </div>
+                        <div *ngIf="updateForm.controls['message'].errors.maxlength" class="red">
+                            Message must have at most 1000 chars
+            
+                        </div>
+            
+                        </div>
+                        <div>
+                            <button class="btn btn-primary py-2 px-4" (click)="updateResponse()" type="submit" id="sendMessageButton">Update Response</button>
+                                <button class="btn btn-success py-2 px-4"  (click)="cancel()"   type="reset" id="sendMessageButton">
+                                    Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!-- Contact End -->
+
+
+  
+
+
+</body>
+
+</html>

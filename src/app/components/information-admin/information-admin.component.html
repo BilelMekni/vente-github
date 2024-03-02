@@ -1,0 +1,114 @@
+<app-banner [title]="title | uppercase" [dateInput]="actualDate"></app-banner>
+<table class="table table-success">
+    <style>
+        button {
+          display: inline-block;
+          background-color: #7b38d8;
+          border-radius: 20px;
+          border: 4px double #cccccc;
+          color: #eeeeee;
+          text-align: center;
+          font-size: 20px;
+          padding: 20px;
+          width: 200px;
+          height: 100px;
+          transition: all 0.5s;
+          cursor: pointer;
+          margin: 5px;
+        }
+        button span {
+          cursor: pointer;
+          display: inline-block;
+          position: relative;
+          transition: 0.5s;
+        }
+        button span:after {
+          content: "\00bb";
+          position: absolute;
+          opacity: 0;
+          top: 0;
+          right: -20px;
+          transition: 0.5s;
+        }
+        button:hover {
+          background-color: #f7c2f9;
+        }
+        button:hover span {
+          padding-right: 25px;
+        }
+        button:hover span:after {
+          opacity: 1;
+          right: 0;
+        }
+      </style>
+  <thead class="ligne">
+    <tr>
+      <th class="text" scope="col">Number Components</th>
+      <th class="text" scope="col">Name Components</th>
+      <th class="text" scope="col">Table Components</th>
+      <th class="text" scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>SignupAdmin</td>
+      <td>AdminTable</td>
+      <td><button type="button" (click)="adminTable()" class="style">Admin Table</button></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>SignupOwner</td>
+      <td>OwnerTable</td>
+      <td><button type="button" (click)="ownerTable()" class="style">Owner Table</button></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>SignupClient</td>
+      <td>ClientTable</td>
+      <td><button type="button" (click)="clientTable()" class="style" >Client Table</button  ></td>
+    </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>AddProducts</td>
+      <td>ProductsTable</td>
+      <td><button type="button" (click)="productsTable()" class="style" >Products Table</button  ></td>
+    </tr>
+    <tr>
+      <th scope="row">5</th>
+      <td>AddContact</td>
+      <td>ContactTable</td>
+      <td><button type="button" (click)="contactTable()" class="style" >Contact Table</button  ></td>
+    </tr>
+    <tr>
+      <th scope="row">6</th>
+      <td>AddPublications</td>
+      <td>PublicationsTable</td>
+      <td><button type="button" (click)="publicationsTable()" class="style" >Publications Table</button  ></td>
+    </tr>
+    <tr>
+      <th scope="row">7</th>
+      <td>AddPublicationsClients</td>
+      <td>PublicationsClientsTable</td>
+      <td><button type="button" (click)="publicationsClientsTable()" class="style" >Publications Clients Table</button  ></td>
+    </tr>
+    <tr>
+      <th scope="row">8</th>
+      <td>AddPurchase Products</td>
+      <td>PurchaseProductsTable</td>
+      <td><button type="button" (click)="purchaseProductsTable()" class="style" >Purchase Products Table</button  ></td>
+    </tr>
+    <tr>
+      <th scope="row">9</th>
+      <td>AddReturnResponse</td>
+      <td>ReturnResponse Table</td>
+      <td><button type="button" (click)="returnResponseTable()" class="style" >ReturnResponse Table</button  ></td>
+    </tr>
+    <tr>
+      <th scope="row">10</th>
+      <td>ReturnResponseConfirme</td>
+      <td>ReturnResponse Confirme</td>
+      <td><button type="button" (click)="returnResponseConfirme()" class="style" >ReturnResponse Confirme</button  ></td>
+    </tr>
+  </tbody>
+</table>

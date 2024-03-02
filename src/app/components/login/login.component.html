@@ -1,0 +1,97 @@
+<app-banner title="LOGIN"></app-banner>
+
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Login Form | CodingLab </title>
+    
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+   </head>
+<body>
+    <div class="text-center mb-4">
+        <h2 class="section-title px-5"><span class="px-2">Wellcome To Login Sold Online</span></h2>
+    </div>
+  <div class="main_div">
+    <div class="title">Login </div>
+    <div class="social_icons">
+      <a href="#"><i class="fab fa-facebook-f"></i> <span>Facebook</span></a>
+      <a href="#"><i class="fab fa-twitter"></i><span>Twitter</span></a>
+    </div>
+    <form  [formGroup]="loginForm"   action="#">
+      <div class="input_box">
+        <input type="text"  formControlName="email"   placeholder="Email">
+        <div class="icon"><i class="fas fa-user"></i></div>
+      </div>
+      <div *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].touched ||
+      loginForm.controls['email'].dirty)">
+      <div *ngIf="loginForm.controls['email'].errors.required" class="red">
+        Email is required
+
+      </div>
+      <div *ngIf="loginForm.controls['email'].errors.email" class="red">
+        Email is invalid
+
+      </div>
+
+      </div>
+      OU
+      <div class="input_box">
+        <input type="tel" formControlName="telephone"  placeholder=" Phone">
+        <div class="icon"><i class="fa fa-phone"></i></div>
+      </div>
+      <div *ngIf="loginForm.controls['telephone'].invalid && (loginForm.controls['telephone'].touched ||
+      loginForm.controls['telephone'].dirty)">
+      <div *ngIf="loginForm.controls['telephone'].errors.required" class="red">
+        Mobile is required
+        
+      </div>
+      <div *ngIf="loginForm.controls['telephone'].errors.minlength" class="red">
+        Mobile must have at last 8 number
+
+      </div>
+      <div *ngIf="loginForm.controls['telephone'].errors.maxlength" class="red">
+        Mobile must have at most 8 number
+
+      </div>
+
+      </div>
+      <div class="input_box">
+        <input type="password" formControlName="password" placeholder="Password" >
+        <div class="icon"><i class="fas fa-lock"></i></div>
+      </div>
+      <div *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].touched ||
+      loginForm.controls['password'].dirty)">
+      <div *ngIf="loginForm.controls['password'].errors.required" class="red">
+        Password is required
+      </div>
+      <div *ngIf="loginForm.controls['password'].errors.pattern" class="red">
+        password not valid (Minimum eight characters,
+        At least one uppercase letter,
+        At least one lowercase letter,
+        At least one number,
+        At least one special character).
+   </div>
+      </div>
+      <div class="option_div">
+        <div class="check_box">
+          <input type="checkbox">
+          <span>Remember me</span>
+        </div>
+        <div class="forget_div">
+          <a href="#">Forgot password?</a>
+        </div>
+      </div>
+      <div class="input_box button">
+        <input type="submit" (click)="login()" value="Login">
+        <span style="color: red;">{{errorMsg}}</span><br>
+      </div>
+      <div class="sign_up">
+        Not a member? <a href="signupClients">Signup now</a>
+      </div>
+    </form>
+  </div>
+  
+</body>
+</html>

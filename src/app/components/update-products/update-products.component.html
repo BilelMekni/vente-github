@@ -1,0 +1,94 @@
+<app-banner title="UPDATE PRODUCTS"></app-banner> 
+<section class="forms-section">
+    
+    <div class="forms">
+      <div class="form-wrapper is-active">
+        <form  [formGroup]="updateForm"    class="form form-login">
+            <h1>Update PRODUCTS</h1>
+          <fieldset>
+            
+            <div class="input-block">
+              <label for="products-name">name</label>
+              <input id="name" type="text"  formControlName="name">
+            </div>
+            <div *ngIf="updateForm.controls['name'].invalid && (updateForm.controls['name'].touched ||
+            updateForm.controls['name'].dirty)">
+            <div *ngIf="updateForm.controls['name'].errors.required" class="orange">
+                Name is required
+
+            </div>
+            <div *ngIf="updateForm.controls['name'].errors.minlength" class="orange">
+                name must have at last 3 chars
+
+            </div>
+            <div *ngIf="updateForm.controls['name'].errors.maxlength" class="orange">
+                name must have at most 20 chars
+
+            </div>
+
+            </div>
+           
+           
+              <div class="input-block">
+                <label for="products-stock">stock</label>
+                <input id="products-stock" type="number"  formControlName="stock" >
+              </div>
+              <div *ngIf="updateForm.controls['stock'].invalid && (updateForm.controls['stock'].touched ||
+            updateForm.controls['stock'].dirty)">
+            <div *ngIf="updateForm.controls['stock'].errors.required" class="orange">
+                Stock is required
+
+            </div>
+            
+            </div>
+              <div class="input-block">
+                <label for="products-price">price</label>
+                <input id="price" type="number" formControlName="price"  >
+              </div>
+              <div *ngIf="updateForm.controls['price'].invalid && (updateForm.controls['price'].touched ||
+              updateForm.controls['price'].dirty)">
+              <div *ngIf="updateForm.controls['price'].errors.required" class="orange">
+                  Price is required
+  
+              </div>
+            
+            </div>
+            <div class="input-block">
+              <label for="products-supplier">supplier</label>
+              <input id="supplier" type="text" formControlName="supplier">
+            </div>
+            <div *ngIf="updateForm.controls['stock'].invalid && (updateForm.controls['supplier'].touched ||
+            updateForm.controls['supplier'].dirty)">
+            <div *ngIf="updateForm.controls['supplier'].errors.required" class="orange">
+                Supplier is required
+
+            </div>
+            <div *ngIf="updateForm.controls['supplier'].errors.minlength" class="orange">
+                Supplier must have at last 3 chars
+
+            </div>
+            <div *ngIf="updateForm.controls['supplier'].errors.maxlength" class="orange">
+              Supplier must have at most 20 chars
+
+            </div>
+
+            </div>
+            <!-- <div class="input-block">
+              <label for="products-disponible">disponible</label>
+              <input id="disponible" type="text" [(ngModel)]="product.disponible" [ngModelOptions]="{standalone:true}">
+            </div> -->
+            
+          </fieldset>
+          <button type="submit" class="btn-products"  (click)="updateProducts()" >Update Products</button>
+          <button type="submit" class="btn-products" (click)="cancelProducts()" >Cancel</button>
+
+        </form>
+      </div>
+      <div >
+            
+        <img class="img-fluid" src="assets/img/up4.avif" alt="">
+        
+    </div>
+      
+    </div>
+  </section>

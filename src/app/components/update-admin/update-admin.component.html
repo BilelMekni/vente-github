@@ -1,0 +1,111 @@
+<app-banner title="UPDATE ADMIN"></app-banner>
+<div class="container-fluid">
+    <div class="text-center mb-4">
+        <h2 class="section-title px-5"><span class="px-2">Update Admin</span></h2>
+    </div>
+    <div class="row px-xl-5">
+        <div class="col-lg-7 mb-5">
+            <div class="contact-form">
+                <div id="success"></div>
+                <form [formGroup]="updateForm" >
+                    <div class="control-group">
+                        <input type="text" class="form-control" id="name"  formControlName="firstName"  placeholder="Your FirstName"
+                            required="required" data-validation-required-message="Please enter your first name" />
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div *ngIf="updateForm.controls['firstName'].invalid && (updateForm.controls['firstName'].touched ||
+                    updateForm.controls['firstName'].dirty)">
+                    <div *ngIf="updateForm.controls['firstName'].errors.required" class="orange">
+                        FirstName is required
+
+                    </div>
+                    <div *ngIf="updateForm.controls['firstName'].errors.minlength" class="orange">
+                        FirstName must have at last 3 chars
+
+                    </div>
+                    <div *ngIf="updateForm.controls['firstName'].errors.maxlength" class="orange">
+                        FirstName must have at most 20 chars
+
+                    </div>
+
+                    </div>
+                    <div class="control-group">
+                        <input type="text" class="form-control" id="lastName" formControlName="lastName" placeholder="Your LastName"
+                            required="required" data-validation-required-message="Please enter your last name" />
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div *ngIf="updateForm.controls['lastName'].invalid && (updateForm.controls['lastName'].touched || 
+                    updateForm.controls['lastName'].dirty)">
+                    <div *ngIf="updateForm.controls['lastName'].errors.required" class="orange">
+                      LastName is required
+                    </div>
+                    <div *ngIf="updateForm.controls['lastName'].errors.minlength" class="orange">
+                        LastName must have at last 3 chars
+
+                    </div>
+                    <div *ngIf="updateForm.controls['lastName'].errors.maxlength" class="orange">
+                        LastName must have at most 20 chars
+
+                    </div>
+
+                    </div>
+                    
+                    <div class="control-group">
+                        <input type="tel" class="form-control" id="tel" formControlName="telephone"  placeholder="Your Mobile"
+                            required="required" data-validation-required-message="Please enter your mobile" />
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div *ngIf="updateForm.controls['telephone'].invalid && (updateForm.controls['telephone'].touched || 
+                    updateForm.controls['telephone'].dirty)">
+                    <div *ngIf="updateForm.controls['telephone'].errors.required" class="orange">
+                        Mobile is required
+
+                    </div>
+                    <div *ngIf="updateForm.controls['telephone'].errors.minlength" class="orange">
+                        Mobile must have at last 8 number
+
+                    </div>
+                    <div *ngIf="updateForm.controls['telephone'].errors.maxlength" class="orange" >
+                        Mobile must have at most 8 number
+
+                    </div>
+
+                    </div>
+                    <div class="control-group">
+                        <input type="text" class="form-control" id="adresse" formControlName="adresse" placeholder="Your Adresse"
+                            required="required" data-validation-required-message="Please enter your adresse" />
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div *ngIf="updateForm.controls['adresse'].invalid && (updateForm.controls['adresse'].touched || 
+                    updateForm.controls['adresse'].dirty)">
+                    <div *ngIf="updateForm.controls['adresse'].errors.required" class="orange">
+                        Adresse is required
+
+                    </div>
+                    <div *ngIf="updateForm.controls['adresse'].errors.minlength" class="orange">
+                        Adresse must have at last 3 chars
+
+                    </div>
+                    <div *ngIf="updateForm.controls['adresse'].errors.maxlength" class="orange">
+                        Adresse must have at most 50 chars
+
+                    </div>
+
+                    </div>
+                    
+                    <div class="form-group">
+                        <button class="btn btn-primary py-2 px-4"  (click)="updateAdmin()"  [disabled]="updateForm.invalid"  type="submit" id="sendMessageButton">Signup Admin</button>
+                        <button class="btn btn-success py-2 px-4" (click)="cancel()" type="submit" id="cancelButton">Cancel</button>
+                     
+                    </div>
+                   
+                </form>
+            </div>
+        </div>
+        <div >
+            
+            <img class="img-fluid" src="assets/img/up1.jpg" alt="">
+            
+        </div>
+    </div>
+</div>

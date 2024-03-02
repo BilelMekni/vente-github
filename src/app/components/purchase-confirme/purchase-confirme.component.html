@@ -1,0 +1,40 @@
+<app-banner title="PURCHASE CLIENTS CONFIRME"></app-banner>
+
+<div class="container-fluid pt-5">
+    <div class="text-center mb-4">
+        <h2 class="section-title px-5"><span class="px-2">Hellow Purchase Clients Confirmed</span></h2>
+    </div>
+    <div class="row px-xl-5 pb-3">
+        <div class="col-lg-4 col-md-6 pb-1" *ngFor="let purch of purchase">
+            <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
+                <p class="text-right">Hellow</p>
+                <a href="" class="cat-img position-relative overflow-hidden mb-3">
+                    <img class="img-fluid" src="assets/img/buy.png" alt="">
+                </a>
+                <label>FirstName :</label><p class="font-weight-semi-bold m-0">{{purch.firstName}}</p>
+                <label>LastName :</label><p class="font-weight-semi-bold m-0">{{purch.lastName}}</p>
+                <label>Phone :</label><p class="font-weight-semi-bold m-0">{{purch.phone}}</p>
+                <label>Email :</label><p class="font-weight-semi-bold m-0">{{purch.email}}</p>
+                <label>Type :</label><p class="font-weight-semi-bold m-0">{{purch.type}}</p>
+                <label>Products :</label><p class="font-weight-semi-bold m-0">{{purch.products}}</p>
+                <label>Price :</label><p class="font-weight-semi-bold m-0">{{purch.price}}</p>
+                <label>Quantity :</label><p class="font-weight-semi-bold m-0">{{purch.quantity}}</p>
+                <label>Status :</label><p class="font-weight-semi-bold m-0">{{purch.status}}</p>
+                <label>FirstNameClients :</label><h5 class="font-weight-semi-bold m-0">{{purch.client[0]?.firstName}}</h5>
+                <label>LastNameClients :</label><h5 class="font-weight-semi-bold m-0">{{purch.client[0]?.lastName}}</h5>
+                <label>MobileClients :</label><h5 class="font-weight-semi-bold m-0">{{purch.client[0]?.telephone}}</h5>
+                <label>AdresseClients :</label><h5 class="font-weight-semi-bold m-0">{{purch.client[0]?.adresse}}</h5>
+
+
+
+
+            </div>
+            <div >
+                <button type="button" (click)="Accepter()" class="btn btn-warning">Accepter Purchase</button>
+                <button type="button" (click)="Cancel()" class="btn btn-success">Cancel Purchase</button>
+                
+            </div>
+        </div>
+       
+    </div>
+</div>

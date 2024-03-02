@@ -1,0 +1,10 @@
+h1{
+    color: blue;
+    text-align: center;
+    text-decoration: underline;
+    background-color: turquoise;
+}
+.img-fluid{
+    height: 50px;
+    width: 50px;
+}

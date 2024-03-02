@@ -1,0 +1,63 @@
+<app-banner title="ADD PRODUCTS"></app-banner>
+
+<section class="forms-section">
+    
+    <div class="forms">
+      <div class="form-wrapper is-active">
+        <form  #productForm="ngForm" (ngSubmit)="validate()"   class="form form-login">
+            <h1>ADD PRODUCTS</h1>
+          <fieldset>
+            
+            <div class="input-block">
+              <label for="products-name">name</label>
+              <input id="name" type="text"  [(ngModel)]="product.name" [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="input-block">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <label class="input-group-text" for="inputGroupSelect01">type</label>
+                    </div>
+                    <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="product.type" [ngModelOptions]="{standalone: true}">
+                      <option selected>Choose...</option>
+                      <option value="Technologie">Technologie</option>
+                      <option value="Sport">Sport</option>
+                      <option value="Dress">Dress</option>
+                    </select>
+                  </div>
+              </div>
+              <div class="input-block">
+                <label for="products-reference">reference</label>
+                <input id="reference" type="text" [(ngModel)]="product.reference" [ngModelOptions]="{standalone: true}" >
+              </div>
+              <div class="input-block">
+                <label for="products-stock">stock</label>
+                <input id="products-stock" type="number" [(ngModel)]="product.stock" [ngModelOptions]="{standalone: true}" >
+              </div>
+              <div class="input-block">
+                <label for="products-price">price</label>
+                <input id="price" type="number" [(ngModel)]="product.price" [ngModelOptions]="{standalone: true}"  >
+              </div>
+            <div class="input-block">
+              <label for="products-supplier">supplier</label>
+              <input id="supplier" type="text" [(ngModel)]="product.supplier" [ngModelOptions]="{standalone:true}">
+            </div>
+            <!-- <div class="input-block">
+              <label for="products-disponible">disponible</label>
+              <input id="disponible" type="text" [(ngModel)]="product.disponible" [ngModelOptions]="{standalone:true}">
+            </div> -->
+            
+          </fieldset>
+          <button type="submit" class="btn-products">Add Product</button>
+          <button type="submit" class="btn-products" (click)="cancelProducts()" >Cancel</button>
+
+        </form>
+      </div>
+      <div >
+            
+        <img class="img-fluid" src="assets/img/ajouter.png" alt="">
+        
+    </div>
+      
+    </div>
+  </section>
+

@@ -1,0 +1,118 @@
+<app-banner title="CONTACT"></app-banner> 
+<!-- Contact Start -->
+<div class="container-fluid pt-5">
+    <div class="text-center mb-4">
+        <h2 class="section-title px-5"><span class="px-2">Contact For Any Queries</span></h2>
+    </div>
+    <div class="row px-xl-5">
+        <div class="col-lg-7 mb-5">
+            <div class="contact-form">
+                <div id="success"></div>
+                <form  [formGroup]="contactForm"  name="sentMessage" id="contactForm" novalidate="novalidate">
+                    <div class="control-group">
+                        <input type="text" class="form-control" id="name"  formControlName="name"   placeholder="Your Name"
+                            required="required" data-validation-required-message="Please enter your name" />
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div *ngIf="contactForm.controls['name'].invalid && (contactForm.controls['name'].touched ||
+                    contactForm.controls['name'].dirty)">
+                    <div *ngIf="contactForm.controls['name'].errors.required" class="red">
+                        Name is required
+
+                    </div>
+                    <div *ngIf="contactForm.controls['name'].errors.minlength" class="red">
+                        Name must have at last 3 chars
+
+                    </div>
+                    <div *ngIf="contactForm.controls['name'].errors.maxlength" class="red">
+                        Name must have at most 20 chars
+
+                    </div>
+
+                    </div>
+                    <div class="control-group">
+                        <input type="email" class="form-control" id="email" formControlName="email"  placeholder="Your Email"
+                            required="required" data-validation-required-message="Please enter your email" />
+                        <!-- <p class="help-block text-danger"></p> -->
+                    </div>
+                    <div *ngIf="contactForm.controls['email'].invalid && (contactForm.controls['email'].touched ||
+                    contactForm.controls['email'].dirty)">
+                    <div *ngIf="contactForm.controls['email'].errors.required" class="red">
+                        Email is required
+
+                    </div>
+                    <div *ngIf="contactForm.controls['email'].errors.email" class="red">
+                        Email is invalid
+
+                    </div>
+
+                    </div>
+                    <div class="control-group">
+                        <input type="text" class="form-control" id="subject" formControlName="subject"   placeholder="Subject"
+                            required="required" data-validation-required-message="Please enter a subject" />
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div *ngIf="contactForm.controls['subject'].invalid && (contactForm.controls['subject'].touched ||
+                    contactForm.controls['subject'].dirty)">
+                    <div *ngIf="contactForm.controls['subject'].errors.required" class="red">
+                        Subject is required
+
+                    </div>
+                    <div *ngIf="contactForm.controls['subject'].errors.minlength" class="red">
+                        Subject must have at last 3 chars
+
+                    </div>
+                    <div *ngIf="contactForm.controls['subject'].errors.maxlength" class="red">
+                        Subject must have at most 30 chars
+
+                    </div>
+                    
+                    </div>
+                    <div class="control-group">
+                        <textarea class="form-control" rows="6" id="message"    formControlName="message"    placeholder="Message"
+                            required="required"
+                            data-validation-required-message="Please enter your message"></textarea>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div *ngIf="contactForm.controls['message'].invalid && (contactForm.controls['message'].touched ||
+                    contactForm.controls['message'].dirty)">
+                    <div *ngIf="contactForm.controls['message'].errors.required" class="red">
+                        Message is required
+                        
+                    </div>
+                    <div *ngIf="contactForm.controls['message'].errors.minlength" class="red">
+                        Message must have at 3 chars
+
+                    </div>
+                    <div *ngIf="contactForm.controls['message'].errors.maxlength" class="red">
+                        Message must have at most 1000 chars
+
+                    </div>
+
+                    </div>
+                    <div>
+                        <button class="btn btn-primary py-2 px-4" (click)="contact()" type="submit" id="sendMessageButton">Send
+                            Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-5 mb-5">
+            <h5 class="font-weight-semi-bold mb-3">Online Shopping</h5>
+            <p>Online Shopping Site for Fashion & Lifestyle in India. India's Fashion Expert brings you a variety of footwear, Clothing, Accessories and lifestyle products ...</p>
+            <div class="d-flex flex-column mb-3">
+                <h5 class="font-weight-semi-bold mb-3">Shop 1</h5>
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Borj Louzir, Ariana, Tunisia</p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>shop@gmail.com</p>
+                <p class="mb-2"><i class="fa fa-phone-alt text-primary mr-3"></i>+216 71520300</p>
+            </div>
+            <div class="d-flex flex-column">
+                <h5 class="font-weight-semi-bold mb-3">Shop 2</h5>
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>145 Industrial Zone, Ben Arous, Tunisia</p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>shop@gmail.com</p>
+                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+216 71520200</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact End -->
